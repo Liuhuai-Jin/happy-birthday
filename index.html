@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宝贝生日快乐！</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Ma Shan Zheng', cursive;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header {
+            padding: 50px 0;
+            width: 100%;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            margin: 0;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            animation: bounce 2s infinite;
+            background: linear-gradient(to right, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .age {
+            font-size: 3rem;
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 30px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .celebration-emoji {
+            font-size: 4rem;
+            margin: 30px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .message-box {
+            max-width: 800px;
+            padding: 50px;
+            margin: 30px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            font-size: 2rem;
+            line-height: 1.8;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+
+        .message-box p {
+            margin: 25px 0;
+        }
+
+        .wish-list {
+            max-width: 700px;
+            margin: 40px;
+            padding: 0;
+            list-style-type: none;
+            text-align: left;
+        }
+
+        .wish-list li {
+            background: rgba(255,255,255,0.25);
+            margin: 20px 0;
+            padding: 20px 30px;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            position: relative;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .wish-list li:hover {
+            transform: translateX(15px);
+            background: rgba(255,255,255,0.35);
+        }
+
+        .wish-list li::before {
+            content: "✨";
+            margin-right: 15px;
+            animation: twinkle 1.5s infinite;
+        }
+
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #f00;
+            opacity: 0;
+            animation: confetti-fall 5s linear infinite;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding: 30px;
+            text-align: center;
+            font-size: 1.8rem;
+            width: 100%;
+            background: rgba(0,0,0,0.1);
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-15px) rotate(-5deg); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .age { font-size: 2.2rem; }
+            .message-box {
+                font-size: 1.6rem;
+                padding: 30px;
+                margin: 20px;
+            }
+            .wish-list li {
+                font-size: 1.4rem;
+                padding: 15px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>刘宸溪</h1>
+        <div class="age">生日快乐！</div>
+    </div>
+
+    <div class="celebration-emoji">🎉🎁🎈</div>
+
+    <div class="message-box">
+        <p>亲爱的宝贝：</p>
+        <p>今天是你的特别日子，祝你生日快乐！</p>
+        <p>你是我们生命中最闪耀的星星，</p>
+        <p>每一天都因你而更加美好。</p>
+    </div>
+
+    <ul class="wish-list">
+        <li>愿你健康快乐每一天</li>
+        <li>愿你永远保持纯真的笑容</li>
+        <li>愿你的梦想都能实现</li>
+        <li>愿你被爱与幸福包围</li>
+        <li>愿你的未来充满无限可能</li>
+    </ul>
+
+    <div class="confetti" id="confetti"></div>
+
+    <div class="footer">
+        <p>❤️ 永远爱你的爸爸妈妈 ❤️</p>
+        <p>2025年生日留念</p>
+    </div>
+
+    <script>
+        // 创建彩色纸屑效果
+        function createConfetti() {
+            const container = document.getElementById('confetti');
+            const colors = ['#ff6b6b', '#ffa502', '#2ed573', '#1e90ff', '#ff4757', '#ff6348', '#fffa65', '#7bed9f'];
+
+            for (let i = 0; i < 50; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                piece.style.left = Math.random() * 100 + 'vw';
+                piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+                piece.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                piece.style.animationDelay = Math.random() * 5 + 's';
+                piece.style.width = (Math.random() * 10 + 10) + 'px';
+                piece.style.height = (Math.random() * 10 + 10) + 'px';
+                piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+
+                container.appendChild(piece);
+            }
+        }
+
+        // 页面加载后初始化
+        window.onload = function() {
+            createConfetti();
+
+            
+            const age = 5; // 修改为实际年龄
+            document.querySelector('.age').textContent = '生日快乐！';
+        };
+    </script>
+</body>
+</html>
